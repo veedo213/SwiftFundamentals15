@@ -10,14 +10,15 @@ print("How to use playgrounds to make writing Swift fun and simple")
 /*:
  Now print your own phrases to the console. Pick one of your favorite songs. Use your knowledge of the `print` function to display the song title and artist.
  */
-
-
+print("One of my favorite songs is:")
+print("Song Title: Birds of a feather")
+print("Artist: Billie Eilish")
 /*:
  Use multiple `print` functions to write out some of the lyrics to the song.
  */
-
-
-
+print("Birds of a feather, we should stick together, I know")
+print("I said I'd never think I wasn't better alone")
+print("Can't change the weather, might not be forever")
 /*:
 
  _Copyright © 2023 Apple Inc._
