@@ -14,12 +14,50 @@ struct RunningWorkout {
     var time: Double
     var elevation: Double
 }
+// Type method to calculate required mile time
+static func mileTimeFor(distance: Double, time: Double) -> Double {
+    // 1 mile = 1600 meters
+    let miles = distance / 1600.0
+    guard miles > 0 else { return 0 }
+    let averageMileTime = time / miles
+    return averageMileTime
+}
 
+}
+
+// Example: You want to run 4800 meters (3 miles) in 1500 seconds (25 minutes)
+let requiredMileTime = RunningWorkout.mileTimeFor(distance: 4800, time: 1500)
+print(requiredMileTime)  // Output: 500.0
 
 
 //:  It may be helpful to have a few type properties on `RunningWorkout` representing unit conversions (i.e. meters to mile, feet to meters, etc.). Go back and add a type property for `meterInFeet` and assign it 3.28084. Then add a type property for `mileInMeters` and assign it 1600.0. Print both of these values below.
+struct RunningWorkout {
+    var distance: Double   // in meters
+    var time: Double       // in seconds
 
+// Type property: meters to feet conversion
+static let meterInFeet: Double = 3.28084
 
+// Type property: mile to meters conversion
+static let mileInMeters: Double = 1600.0
+
+// Type method to calculate required mile time
+static func mileTimeFor(distance: Double, time: Double) -> Double {
+    let miles = distance / mileInMeters
+    guard miles > 0 else { return 0 }
+    let averageMileTime = time / miles
+    return averageMileTime
+}
+
+}
+
+// Print the unit conversion type properties
+print(RunningWorkout.meterInFeet)   // 3.28084
+print(RunningWorkout.mileInMeters)  // 1600.0
+
+// Test the mileTimeFor method again if you like:
+let requiredMileTime = RunningWorkout.mileTimeFor(distance: 4800, time: 1500)
+print(requiredMileTime)  // Should print 500.0
 /*:
  _Copyright © 2023 Apple Inc._
 
